@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Portfolio - Vincent Jung</title>
+    <title>Welcome - Vincent Jung</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
     <canvas id="dnaCanvas"></canvas>
     <main>
         <section id="about">
             <h2>About Me</h2>
-            <p>Hi! My name is Vincent. I am a PhD student at <a href="https://www.epfl.ch/en/">EPFL</a> and <a href="https://www.idiap.ch/en">IDIAP. I work on improving our understanding of RNA using AI, and our understanding of AI using RNA. </a>.</p>
+            <p>
+                Hi! My name is Vincent. 
+                I am a PhD student at <a href="https://www.epfl.ch/en/">EPFL</a> and <a href="https://www.idiap.ch/en">IDIAP</a>. I work with Prof. Lonneke van der Plas, Prof. Pascal Frossard and Dr. Raphaëlle Luisier on  improving our understanding of RNA using AI.
+                I am particularly interested in uncovering the information learned by large neural networks when trained on RNA sequences, and how we can design architectures and training objectives that make best use of the wealth of unlabelled data out there.
+            </p>
         </section>
     </main>
 
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main_withstrand.js"></script>
+    <!-- <script src="scripts/snake-background.js"></script> -->
+    <noscript>
+        <style>
+            #dnaCanvas {
+                display: none;
+            }
+        </style>
+    </noscript>
 </body>
 </html>

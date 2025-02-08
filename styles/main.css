@@ -18,11 +18,17 @@ body {
 
 /* Header styles */
 header {
+    background-color: rgba(150, 150, 150, 0.05);
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 40px 0;
     gap: 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
 
 header .text-content {

@@ -118,8 +118,8 @@ class DNAAnimation {
         this.animate();
 
         // Update color definitions to use proper RGB format
-        this.backgroundColor = '242, 255, 255';  // Remove rgba wrapper
-        this.helixColor = '232, 255, 255';      // Remove rgba wrapper
+        this.backgroundColor = '250, 239, 227';  // Remove rgba wrapper
+        this.helixColor = '247, 232, 215';      // Remove rgba wrapper
     }
 
     resize() {
@@ -153,7 +153,7 @@ class DNAAnimation {
 
     init() {
         // Create initial helixes with proper spacing
-        const numInitialHelixes = 10;
+        const numInitialHelixes = 3;
         const spacing = this.canvas.width / (numInitialHelixes + 1);
         
         for (let i = 0; i < numInitialHelixes; i++) {

@@ -1,27 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome - Vincent Jung</title>
+    <title>Vincent Jung</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
     <canvas id="dnaCanvas"></canvas>
+    <header>
+        <div class="text-content">
+            <h1>Vincent Jung</h1>
+            <p>Artifical Intelligence for RNA Biology</p>
+        </div>
+        <img src="images/face_pic.png" alt="Profile Picture">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#Semester and Master projects"></a>Semester and Master projects</li>
+        </ul>
+    </nav>
+
     <main>
         <section id="about">
             <h2>About Me</h2>
             <p>
-                Hi! My name is Vincent. 
-                I am a PhD student at <a href="https://www.epfl.ch/en/">EPFL</a> and <a href="https://www.idiap.ch/en">IDIAP</a>. I work with Prof. Lonneke van der Plas, Prof. Pascal Frossard and Dr. Raphaëlle Luisier on  improving our understanding of RNA using AI.
-                I am particularly interested in uncovering the information learned by large neural networks when trained on RNA sequences, and how we can design architectures and training objectives that make best use of the wealth of unlabelled data out there.
-            </p>
+                Hi! My name is Vincent.
+                I am a PhD student at <a href="https://www.epfl.ch/en/">EPFL</a> and <a
+                    href="https://www.idiap.ch/en">IDIAP</a>. I work with <a
+                    href="https://sites.google.com/site/lonnekenlp/">Prof. Lonneke van der Plas</a>, <a
+                    href="https://www.epfl.ch/labs/lts4/people/people-current/frossard/">Prof. Pascal
+                    Frossard</a> and <a href="https://www.luisierlab.com/">Prof. Raphaëlle Luisier</a> on creating AI systems designed to improve our understanding of RNA.
+                </p>
+                <p>
+                    Before starting my PhD, I completed my Msc in Data Science from <a href="https://ethz.ch/en.html">ETHZ</a>, and my Bsc in Electrical Engineering from <a href="https://www.epfl.ch/en/">EPFL</a>. I did an exchange year at <a href="https://www.kth.se/en">KTH</a>.
+                    I also worked as a research intern under the supersivion of Prof. Lonneke van der Plas, studying lexical innovation and biases in multilingual LLMs.
+                </p>
+                <p>
+                    I am from northeastern France, specifically from the <a href="https://en.wikipedia.org/wiki/Pays_de_Bitche">Bitscherland</a>, a region with a rich and complex history which I am always eager to learn more about. In my free time, I enjoy running, hiking, baking and reading.
+                </p>
+        </section>
+
+        <section id="research">
+            <h2>Research</h2>
+            <p>I work on developing AI models that are designed to extract biologically relevant features from large datasets. Currently, I am working with RNA Language Models, which are trained similarly to LLMs but on RNA sequences. I seek to understand what these models fundamentally capture, how they do so and how we can improve existing model designs or create new architectures or training paradigms altogether. Moreover, I work on their interpretation and application to relevant biological issues such as structure or interaction prediction.</p>
+            <p>This field of research is particularly exciting to me as it raises many important question in deep learning: how do we design models meant to capture the molecular world, how do we include prior knowledge while letting models learn their own, how do we efficiently learn on large databases with many redudancies, and so on. It also deals with real biological problems, and improvements in our application tasks can quickly lead to unlocking new possibilities in biological research.</p>
+            <p>Although I have a computer science background, I work closely with RNA biologists and aim to understand the underlying biology of the subjects I work on in depth. In this, I am lucky to be part of a now long-running collaboration between my three supervisors each coming with their own expertise, namely AI, RNA Biology and NLP. This collaboration has already resulted in a <a href="https://www.nature.com/articles/s41580-025-00857-w"> Nature Reviews Molecular Cell Biology paper </a> which outlines how these three subjects can come together to unlock new possibilities in RNA Biology.</p>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            <p></p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p> You can contact me via email (<a href="mailto:vincent.jung@idiap.ch" >vincent.jung@idiap.ch</a>)</p>
         </section>
     </main>
 
     <script src="scripts/main_withstrand.js"></script>
-    <!-- <script src="scripts/snake-background.js"></script> -->
+    <!-- ORCID Configuration -->
+    <script src="scripts/orcidConfig.js"></script>
+    <!-- ORCID Publications Loader -->
+    <script src="scripts/orcidLoader.js"></script>
     <noscript>
         <style>
             #dnaCanvas {
@@ -30,4 +79,5 @@
         </style>
     </noscript>
 </body>
+
 </html>

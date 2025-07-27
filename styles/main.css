@@ -16,6 +16,10 @@ body {
     padding: 20px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Header styles */
 header {
     background-color: rgba(150, 150, 150, 0.05);
@@ -187,4 +191,67 @@ section {
     height: 100%;
     z-index: -1;
     background: #f8f9fa;
+}
+
+/* Publications styles */
+.publications-list {
+    margin-top: 1rem;
+}
+
+.publication-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-left: 4px solid #8b6100;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.publication-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.publication-item h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.publication-item h3 a {
+    color: #ad612b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.publication-item h3 a:hover {
+    color: #992400;
+    text-decoration: underline;
+}
+
+.publication-item .authors {
+    color: #666;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.publication-item .journal {
+    color: #555;
+    margin-bottom: 0.3rem;
+}
+
+.publication-item .year {
+    color: #777;
+    margin-bottom: 0.3rem;
+}
+
+.publication-item .type {
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+.publication-item .type small {
+    font-size: 0.8rem;
 }

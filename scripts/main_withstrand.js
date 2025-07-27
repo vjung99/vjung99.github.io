@@ -1,84 +1,18 @@
-document.addEventListener('DOMContentLoaded', async () => {
-    // Load and insert header
-    try {
-        const response = await fetch('/components/header.html');
-        const headerHtml = await response.text();
-        document.body.insertAdjacentHTML('afterbegin', headerHtml);
-
-        // Set active state based on current page
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        document.querySelector(`nav a[href="${currentPage}"]`)?.classList.add('active');
-    } catch (error) {
-        console.error('Error loading header:', error);
-    }
-
-    // Add transition overlay to the page
-    const overlay = document.createElement('div');
-    overlay.className = 'transition-overlay';
-    document.body.appendChild(overlay);
-
-    // Function to update active tab
-    const updateActiveTab = (path) => {
-        // Remove active class from all links
-        document.querySelectorAll('nav a').forEach(navLink => {
-            navLink.classList.remove('active');
-        });
-        // Add active class to current page link
-        const currentPage = path.split('/').pop() || 'index.html';
-        document.querySelector(`nav a[href="${currentPage}"]`)?.classList.add('active');
-    };
-
-    // Handle all navigation links
-    document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', async (e) => {
+document.addEventListener('DOMContentLoaded', () => {
+    // For all nav links that use a hash, scroll smoothly to the corresponding section
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
             e.preventDefault();
-            const target = e.target.href;
-
-            // Fade out main content
-            const mainContent = document.querySelector('main');
-            mainContent.style.opacity = '0';
-            mainContent.style.transform = 'translateX(10px)';
-
-            try {
-                // Fetch new page content
-                const response = await fetch(target);
-                const html = await response.text();
-                
-                // Extract main content from new page
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const newMainContent = doc.querySelector('main').innerHTML;
-
-                // Update page title
-                document.title = doc.title;
-                
-                // Update URL without page reload
-                window.history.pushState({}, '', target);
-
-                // Update active tab
-                updateActiveTab(target);
-
-                // After short delay, update and fade in content
-                setTimeout(() => {
-                    mainContent.innerHTML = newMainContent;
-                    mainContent.style.opacity = '1';
-                    mainContent.style.transform = 'translateX(0)';
-                }, 150);
-            } catch (error) {
-                console.error('Error loading page:', error);
-                window.location.href = target; // Fallback to normal navigation
+            const targetId = link.getAttribute('href');
+            const targetElem = document.querySelector(targetId);
+            if (targetElem) {
+                targetElem.scrollIntoView({ behavior: 'smooth' });
+                // Update active state (optional)
+                document.querySelectorAll('nav a').forEach(el => el.classList.remove('active'));
+                link.classList.add('active');
             }
         });
     });
-
-    // Handle browser back/forward buttons
-    window.addEventListener('popstate', () => {
-        updateActiveTab(window.location.pathname);
-        window.location.reload();
-    });
-
-    // Set initial active state
-    updateActiveTab(window.location.pathname);
 });
 
 class DNAAnimation {
@@ -95,7 +29,7 @@ class DNAAnimation {
         this.SEGMENT_LENGTH = 150; // Fixed length per segment
 
         // Add scale range constants
-        this.MIN_SCALE = 0.5;  // Minimum scale factor
+        this.MIN_SCALE = 1;  // Minimum scale factor
         this.MAX_SCALE = 3;  // Maximum scale factor
 
         // Update existing constants to be base values
@@ -107,7 +41,7 @@ class DNAAnimation {
         this.BASE_POINTS_PER_SEGMENT = 40; // Base number of points per segment
 
         // Add minimum spacing constant
-        this.MIN_HELIX_SPACING = 10; // Minimum horizontal spacing between helixes
+        this.MIN_HELIX_SPACING = 20; // Minimum horizontal spacing between helixes
 
         this.resize();
         this.init();
@@ -118,8 +52,8 @@ class DNAAnimation {
         this.animate();
 
         // Update color definitions to use proper RGB format
-        this.backgroundColor = '250, 239, 227';  // Remove rgba wrapper
-        this.helixColor = '247, 232, 215';      // Remove rgba wrapper
+        this.backgroundColor = '256, 256, 256';  // Remove rgba wrapper
+        this.helixColor = '255, 249, 242';      // Remove rgba wrapper
     }
 
     resize() {
@@ -258,4 +192,4 @@ class DNAAnimation {
 // Initialize the animation when the page loads
 window.addEventListener('load', () => {
     new DNAAnimation();
-}); 
+});

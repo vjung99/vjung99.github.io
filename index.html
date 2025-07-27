@@ -11,44 +11,74 @@
 <body>
     <canvas id="dnaCanvas"></canvas>
     <header>
-        <div class="text-content">
-            <h1>Vincent Jung</h1>
-            <p>Artifical Intelligence for RNA Biology</p>
-            <a href="mailto:vincent.jung@epfl.ch" >vincent.jung@epfl.ch</a>
+        <div class="header-content">
+            <div class="text-content">
+                <h1>Vincent Jung</h1>
+                <p class="tagline">Artificial Intelligence for RNA Biology</p>
+                
+                <div class="about-text">
+                    <p>
+                        Hi! My name is Vincent.
+                        I am a PhD student at <a href="https://www.epfl.ch/en/">EPFL</a> and <a
+                            href="https://www.idiap.ch/en">IDIAP</a>. I work with <a
+                            href="https://sites.google.com/site/lonnekenlp/">Prof. Lonneke van der Plas</a>, <a
+                            href="https://www.epfl.ch/labs/lts4/people/people-current/frossard/">Prof. Pascal
+                            Frossard</a> and <a href="https://www.luisierlab.com/">Prof. Raphaëlle Luisier</a> on creating AI systems designed to improve our understanding of RNA.
+                    </p>
+                    <p>
+                        Before starting my PhD, I completed my Msc in Data Science from <a href="https://ethz.ch/en.html">ETHZ</a>, and my Bsc in Electrical Engineering from <a href="https://www.epfl.ch/en/">EPFL</a>. I did an exchange year at <a href="https://www.kth.se/en">KTH</a>.
+                        I also worked as a research intern under the supervision of Prof. Lonneke van der Plas, studying lexical innovation and biases in multilingual LLMs.
+                    </p>
+                    <p>
+                        I am from northeastern France, specifically from the <a href="https://en.wikipedia.org/wiki/Pays_de_Bitche">Bitscherland</a>, a region with a rich and complex history which I am always eager to learn more about. In my free time, I enjoy running, hiking, baking and reading.
+                    </p>
+                </div>
+
+                <div class="contact-info">
+                    <p class="email">
+                        <a href="mailto:vincent.jung@epfl.ch">vincent.jung@epfl.ch</a>
+                    </p>
+                    
+                    <div class="social-buttons">
+                        <a href="mailto:vincent.jung@epfl.ch" class="social-btn email-btn" title="Email">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/vincent-jung-ai/" class="social-btn linkedin-btn" title="LinkedIn" target="_blank">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/vincent_jung_ai" class="social-btn twitter-btn" title="Twitter" target="_blank">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="https://bsky.app/profile/vincent-jung.bsky.social" class="social-btn bluesky-btn" title="Bluesky" target="_blank">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.017-.276.035-.415.056-2.671-.297-5.569.627-6.383 3.364C.378 17.703 0 22.663 0 23.353c0 .688.139 1.86.902 2.202.659.299 1.664.621 4.300-1.24C7.954 22.373 10.913 18.434 12 16.32c1.087 2.114 4.046 6.053 6.798 7.995 2.636 1.861 3.641 1.539 4.300 1.24.763-.342.902-1.514.902-2.202 0-.69-.378-5.65-.624-6.479-.815-2.736-3.713-3.66-6.383-3.364-.136.02-.275.039-.415.056.138-.017.276-.035.415-.056 2.671.297 5.569-.627 6.383-3.364C23.622 9.418 24 4.458 24 3.768c0-.688-.139-1.86-.902-2.202C22.439 1.266 21.434.944 18.798 2.805 16.046 4.747 13.087 8.686 12 10.8z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile-picture">
+                <img src="images/face_pic.png" alt="Profile Picture">
+            </div>
         </div>
-        <img src="images/face_pic.png" alt="Profile Picture">
     </header>
 
     <nav>
         <ul>
-            <li><a href="#about">About</a></li>
             <li><a href="#research">Research</a></li>
             <li><a href="#publications">Publications</a></li>
-            <li><a href="#contact">Contact</a></li>
             <li><a href="#semester-projects">Semester and Master projects</a></li>
         </ul>
     </nav>
 
     <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                Hi! My name is Vincent.
-                I am a PhD student at <a href="https://www.epfl.ch/en/">EPFL</a> and <a
-                    href="https://www.idiap.ch/en">IDIAP</a>. I work with <a
-                    href="https://sites.google.com/site/lonnekenlp/">Prof. Lonneke van der Plas</a>, <a
-                    href="https://www.epfl.ch/labs/lts4/people/people-current/frossard/">Prof. Pascal
-                    Frossard</a> and <a href="https://www.luisierlab.com/">Prof. Raphaëlle Luisier</a> on creating AI systems designed to improve our understanding of RNA.
-                </p>
-                <p>
-                    Before starting my PhD, I completed my Msc in Data Science from <a href="https://ethz.ch/en.html">ETHZ</a>, and my Bsc in Electrical Engineering from <a href="https://www.epfl.ch/en/">EPFL</a>. I did an exchange year at <a href="https://www.kth.se/en">KTH</a>.
-                    I also worked as a research intern under the supersivion of Prof. Lonneke van der Plas, studying lexical innovation and biases in multilingual LLMs.
-                </p>
-                <p>
-                    I am from northeastern France, specifically from the <a href="https://en.wikipedia.org/wiki/Pays_de_Bitche">Bitscherland</a>, a region with a rich and complex history which I am always eager to learn more about. In my free time, I enjoy running, hiking, baking and reading.
-                </p>
-        </section>
-
         <section id="research">
             <h2>Research</h2>
             <p>I work on developing AI models that are designed to extract biologically relevant features from large datasets. Currently, I am working with RNA Language Models, which are trained similarly to LLMs but on RNA sequences. I seek to understand what these models fundamentally capture, how they do so and how we can improve existing model designs or create new architectures or training paradigms altogether. Moreover, I work on their interpretation and application to relevant biological issues such as structure or interaction prediction.</p>

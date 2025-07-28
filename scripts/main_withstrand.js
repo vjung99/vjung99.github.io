@@ -51,9 +51,26 @@ class DNAAnimation {
 
         this.animate();
 
-        // Update color definitions to use proper RGB format
-        this.backgroundColor = '256, 256, 256';  // Remove rgba wrapper
-        this.helixColor = '255, 249, 242';      // Remove rgba wrapper
+        // Initialize colors based on theme
+        this.initColors();
+    }
+
+    initColors() {
+        // Set colors based on current theme
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        this.updateColors(currentTheme);
+    }
+
+    updateColors(theme) {
+        if (theme === 'dark') {
+            this.backgroundColor = '26, 26, 26';      // Dark background
+            this.helixColor1 = '60, 80, 120';         // Darker blue for dark theme
+            this.helixColor2 = '80, 60, 120';         // Darker purple for dark theme
+        } else {
+            this.backgroundColor = '255, 255, 255';   // Pure white background
+            this.helixColor1 = '230, 240, 250';       // Very light blue tint for light theme
+            this.helixColor2 = '240, 235, 250';       // Very light purple tint for light theme
+        }
     }
 
     resize() {
@@ -148,9 +165,17 @@ class DNAAnimation {
             const scale = (point.z + helix.radius) / (helix.radius * 2);
             // Scale the point size based on both Z-position and helix scale
             const size = (this.BASE_POINT_SIZE + scale * 4) * helix.scale;
-            const opacity = 0.3 + scale * 0.7;
+            const opacity = 0.08 + scale * 0.15; // Ultra-subtle opacity
 
-            this.ctx.fillStyle = `rgba(${this.helixColor}, ${opacity})`;
+            // Choose color based on strand and add some variation
+            let color;
+            if (point.strand === 1) {
+                color = this.helixColor1; // Light blue tint
+            } else {
+                color = this.helixColor2; // Light purple tint
+            }
+
+            this.ctx.fillStyle = `rgba(${color}, ${opacity})`;
             this.ctx.beginPath();
             this.ctx.arc(point.x, point.y, size, 0, Math.PI * 2);
             this.ctx.fill();
@@ -158,8 +183,8 @@ class DNAAnimation {
     }
 
     animate() {
-        this.ctx.fillStyle = `rgba(${this.backgroundColor}, 1)`;
-        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        // Clear canvas with transparency to show CSS gradient
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         this.helixes.forEach(helix => {
             this.drawHelix(helix);
@@ -191,5 +216,5 @@ class DNAAnimation {
 
 // Initialize the animation when the page loads
 window.addEventListener('load', () => {
-    new DNAAnimation();
+    window.dnaAnimation = new DNAAnimation();
 });

@@ -24,32 +24,99 @@ html {
 header {
     background-color: rgba(150, 150, 150, 0.05);
     backdrop-filter: blur(10px);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 40px 0;
-    gap: 2rem;
     -webkit-backdrop-filter: blur(10px);
-    padding: 1rem;
+    padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+    border-radius: 8px;
 }
 
-header .text-content {
+.header-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.text-content {
+    flex: 1;
     text-align: left;
 }
 
-header h1 {
+.text-content h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    color: #333;
 }
 
-header img {
-    width: 150px;
-    height: 150px;
+.tagline {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.about-text {
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.contact-info {
+    margin-top: 1rem;
+}
+
+.email {
+    margin-bottom: 1rem;
+}
+
+.email a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.email a:hover {
+    text-decoration: underline;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: white;
+    background-color: #333;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-picture {
+    flex-shrink: 0;
+}
+
+.profile-picture img {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    order: -1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Navigation styles */
@@ -161,19 +228,28 @@ section {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    header {
+    .header-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: 2rem;
     }
 
-    header .text-content {
+    .text-content {
         text-align: center;
-        order: 2;
     }
 
-    header img {
-        order: 1;
+    .text-content h1 {
+        font-size: 2rem;
+    }
+
+    .profile-picture img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .social-buttons {
+        justify-content: center;
     }
 
     nav ul {
